@@ -1,27 +1,53 @@
 #include<iostream>
+#include<string>
 using namespace std;
 
 int main(){
-	int count[5] = {}; //Declare array count for counting A,B,C,D,F and initialize all element = 0
-	cout << "Please input grade of each student (A-F) or input 0 to exit.";
+	char grade;
+	int round = 1;
+	int getA = 0, getB = 0, getC = 0, getD = 0, getF = 0;
+
+	cout << "Please input grade of each student (A-F) or input 0 to exit." << endl;
 	do{
-		cout << "Student [" << "]:";
-		cin >> grade; //The loop must be terminated when grade = '0'
-		if(true) // if grade is A
-			//Do something
-		}else if(true) // if grade is B
-			//Do something
-		//and so on ... for grade = C, D, F	
-		}else{ // grade is wrong input
-			//Do something
+		cout << "Student [" << round << "]: ";
+		cin >> grade; 
+		if(grade == 'A'){ 
+			getA++;
+			round++;
+		}
+		else if(grade == 'B'){ 
+			getB++;	
+			round++;
+		}
+		else if(grade == 'C'){ 
+			getC++;	
+			round++;
+		}
+		else if(grade == 'D'){ 
+			getD++;	
+			round++;
+		}
+		else if(grade == 'F'){ 
+			getF++;
+			round++;
+		}
+		else if(grade == '0') 
+			break;			
+		else{ 
+			cout << "Wrong input. Please input again." << endl;
+			continue;
 		} 
 	}while(true);
 	
 	
-	cout << "In total ? students.";
-	cout << "A = " << count[0] <<", ";
-	cout << "B = " << count[1] <<", ";	
-	//	and so on ... for grade = C, D, F	
+	cout << "In total " << round << " students." << endl;
+	cout << "A = " << getA <<", ";
+	cout << "B = " << getB <<", ";	
+	cout << "C = " << getC <<", ";	
+	cout << "D = " << getD <<", ";	
+	cout << "F = " << getF <<", ";	
+	
+		
 	
 	return 0;
 }
